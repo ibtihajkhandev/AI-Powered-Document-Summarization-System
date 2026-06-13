@@ -143,3 +143,38 @@ After summarization, Cell 9 automatically displays:
 ---
 
 ## 📁 Project Structure
+---
+
+## 📋 Evaluation Criteria Coverage
+
+| Criteria | Weight | Covered In |
+|---|---|---|
+| NLP Preprocessing | 25% | Cell 3 — `preprocess_text()`, `segment_sentences()` |
+| Summarization Logic | 25% | Cell 5 (Frequency) + Cell 6 (TF-IDF) |
+| Code Structure | 20% | All cells — modular functions, comments throughout |
+| Output Quality | 15% | Cell 8 — `display_summary()`, comparison view |
+| Error Handling | 10% | Cell 4 & Cell 8 — validation + error messages |
+| Documentation | 5% | This README |
+
+---
+
+## ⚠️ Common Errors & Fixes
+
+| Error | Fix |
+|---|---|
+| `ModuleNotFoundError: nltk` | Re-run Cell 1 to install libraries |
+| `Resource punkt not found` | Re-run Cell 2 to download NLTK data |
+| `FileNotFoundError` for `.txt`/`.pdf` | Upload file to Colab `/content/` first |
+| PDF text is empty | PDF may be image-based — use Option A instead |
+| Summary has too few sentences | Lower `SUMMARY_SENTENCES` or provide longer input |
+
+---
+
+## 👤 Author
+
+**Ibtihaj Ahmed Khan**
+AI Intern @ Teyzix Core (June 2026)
+
+[![GitHub](https://img.shields.io/badge/GitHub-ibtihajkhandev-black?style=flat-square&logo=github)](https://github.com/ibtihajkhandev)
+[![Kaggle](https://img.shields.io/badge/Kaggle-ibtihajahmedkhan-blue?style=flat-square&logo=kaggle)](https://kaggle.com/ibtihajahmedkhan)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Ibtihajkhan20-yellow?style=flat-square&logo=huggingface)](https://huggingface.co/Ibtihajkhan20)
