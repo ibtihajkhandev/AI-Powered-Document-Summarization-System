@@ -388,6 +388,21 @@ export_to_txt(tfidf_sum, raw_text)
 
 print('Saved File ')
 
+# input from pdf
+
+pdf_summery = input_from_pdf("/content/sample_article.pdf")
+
+# show TF_IDF Base Summery
+print("\nMETHOD 2: TF-IDF Summarization")
+tfidf_sum, _ = tfidf_based_summary(pdf_summery, num_sentences=6)
+display_summary(pdf_summery, tfidf_sum, method_name="TF-IDF")
+
+export_to_pdf(tfidf_sum, pdf_summery)
+export_to_txt(tfidf_sum, pdf_summery)
+
+print('saved file')
+
+
 
 
 
