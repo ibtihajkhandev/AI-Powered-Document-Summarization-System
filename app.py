@@ -1,3 +1,7 @@
+#____ CELL 1: Install required librarie ____
+
+!pip install nltk PyPDF2 fpdf
+
 # CELL 2: Import all libraries we will use
 
 import nltk  # (Natural Language Toolkit)
@@ -348,6 +352,41 @@ def export_to_pdf(summary, original_text, filepath="/content/summary_output.pdf"
 
 
 print("Output module ready!")
+
+# Cell 9: Testing
+
+raw_text = input_from_text("""
+Artificial Intelligence (AI) is rapidly transforming every sector of the modern world.
+From healthcare to finance, AI systems are automating complex tasks and improving efficiency.
+Machine learning, a subset of AI, allows systems to learn from data without being explicitly programmed.
+Deep learning uses neural networks to recognize patterns in large datasets.
+Natural Language Processing (NLP) enables machines to understand and generate human language.
+AI-powered chatbots are now used in customer service to handle thousands of queries simultaneously.
+Self-driving cars rely on AI algorithms to navigate roads safely.
+In medicine, AI is helping diagnose diseases like cancer faster and more accurately than humans.
+The global AI market is expected to reach trillions of dollars in the coming decade.
+However, AI also raises important ethical questions around bias, privacy, and job displacement.
+Governments worldwide are working on regulations to ensure responsible AI development.
+Education systems are adapting to prepare students for an AI-driven economy.
+Open-source AI tools have democratized access to powerful models for researchers and developers.
+The future of AI holds immense promise but requires careful and thoughtful governance.
+""")
+print("\n METHOD 1: Frequency-Based Summarization")
+freq_summary, _ = frequency_based_summary(raw_text, num_sentences=4)
+display_summary(raw_text, freq_summary, method_name="Frequency-Based")
+
+print("\n METHOD 2: TF-IDF Summarization")
+tfidf_sum, _ = tfidf_based_summary(raw_text, num_sentences=4)
+display_summary(raw_text, tfidf_sum, method_name="TF-IDF")
+
+print("\n🔹 ANALYTICS REPORT:")
+analytics = analyze_text(raw_text, top_n=10)
+display_analytics(analytics)
+
+export_to_pdf(tfidf_sum, raw_text)
+export_to_txt(tfidf_sum, raw_text)
+
+print('Saved File ')
 
 
 
